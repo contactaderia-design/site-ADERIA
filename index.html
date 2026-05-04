@@ -7,6 +7,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&display=swap">
+<!-- Calendly widget -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <style>
   :root {
     --cream: #F3EBDD;
@@ -838,7 +841,7 @@
       <a href="#services">Services</a>
       <a href="#chiffres">Résultats</a>
       <a href="#apropos">À propos</a>
-      <a href="#contact" class="nav-cta">Prendre rendez-vous</a>
+      <a href="#" class="nav-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/contact-aderia/30min'});return false;">Prendre rendez-vous</a>
     </div>
   </div>
 </nav>
@@ -871,7 +874,7 @@
       concentrent sur ce qui compte vraiment.
     </p>
     <div class="hero-cta reveal reveal-delay-3">
-      <a href="#contact" class="btn btn-primary">
+      <a href="#" class="btn btn-primary" onclick="Calendly.initPopupWidget({url:'https://calendly.com/contact-aderia/30min'});return false;">
         Prendre rendez-vous
         <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M5 12h14M13 5l7 7-7 7"/>
@@ -1091,7 +1094,7 @@
       sans jargon — juste une conversation utile.
     </p>
     <div class="contact-cta reveal reveal-delay-3">
-      <a href="#" class="btn btn-primary">
+      <a href="#" class="btn btn-primary" onclick="Calendly.initPopupWidget({url:'https://calendly.com/contact-aderia/30min'});return false;">
         Réserver un créneau
         <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M5 12h14M13 5l7 7-7 7"/>
@@ -1154,7 +1157,7 @@
         <ul>
           <li><a href="mailto:contact.aderia@gmail.com">contact.aderia@gmail.com</a></li>
           <li><a href="#">LinkedIn</a></li>
-          <li><a href="#">Prendre rendez-vous</a></li>
+          <li><a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/contact-aderia/30min'});return false;">Prendre rendez-vous</a></li>
         </ul>
       </div>
     </div>
