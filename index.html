@@ -353,7 +353,7 @@
   /* ===== SERVICES ===== */
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 24px;
   }
   .service-card {
@@ -817,7 +817,7 @@
     .nav-links a:not(.nav-cta) { display: none; }
     .hero { padding: 140px 0 80px; }
     .section { padding: 80px 0; }
-    .services-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
     .stats-grid { grid-template-columns: 1fr; }
     .stat + .stat::before {
       left: 20%; right: 20%; top: 0; bottom: auto;
@@ -826,6 +826,9 @@
     .about-grid { grid-template-columns: 1fr; gap: 48px; }
     .hero-meta { flex-direction: column; gap: 20px; }
     .section-head { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -990,6 +993,32 @@
           <span class="service-tag">LLM</span>
           <span class="service-tag">RAG</span>
           <span class="service-tag">Multi-agents</span>
+        </div>
+        <a href="#" class="service-link">
+          En savoir plus
+          <span>→</span>
+        </a>
+      </div>
+
+      <!-- Apps Web & Mobile -->
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-num">04</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="2"/>
+            <path d="M12 18h.01"/>
+            <path d="M8 6h8M8 10h8M8 14h4"/>
+          </svg>
+        </div>
+        <h3 class="service-title">Apps Web & Mobile</h3>
+        <p class="service-desc">
+          Développement d'applications web et mobiles propulsées par l'IA.
+          Des interfaces intuitives, connectées à vos données et prêtes à scaler.
+        </p>
+        <div class="service-tags">
+          <span class="service-tag">Web App</span>
+          <span class="service-tag">Mobile</span>
+          <span class="service-tag">IA intégrée</span>
         </div>
         <a href="#" class="service-link">
           En savoir plus
