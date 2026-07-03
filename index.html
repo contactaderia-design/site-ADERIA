@@ -10,6 +10,8 @@
 <!-- Calendly widget -->
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Tally popup widget -->
+<script src="https://tally.so/widgets/embed.js"></script>
 <style>
   :root {
     --cream: #F3EBDD;
@@ -883,8 +885,8 @@
           <path d="M5 12h14M13 5l7 7-7 7"/>
         </svg>
       </a>
-      <a href="#services" class="btn btn-outline">
-        Découvrir nos services
+      <a href="#" class="btn btn-outline" onclick="Tally.openPopup('ODgv0Y',{hideTitle:true,overlay:true,emoji:{text:'👋',animation:'wave'}});return false;">
+        Audit gratuit
       </a>
     </div>
     <div class="hero-meta reveal">
@@ -939,8 +941,8 @@
           <span class="service-tag">ROI</span>
           <span class="service-tag">Roadmap</span>
         </div>
-        <a href="#" class="service-link">
-          En savoir plus
+        <a href="#" class="service-link" onclick="Tally.openPopup('ODgv0Y',{hideTitle:true,overlay:true,emoji:{text:'👋',animation:'wave'}});return false;">
+          Demander mon audit gratuit
           <span>→</span>
         </a>
       </div>
@@ -1170,6 +1172,7 @@
           <li><a href="#">Workflows IA</a></li>
           <li><a href="#">Agents IA</a></li>
           <li><a href="#">Formation</a></li>
+          <li><a href="#" onclick="Tally.openPopup('ODgv0Y',{hideTitle:true,overlay:true,emoji:{text:'👋',animation:'wave'}});return false;">Demander mon audit gratuit</a></li>
         </ul>
       </div>
       <div class="footer-col">
