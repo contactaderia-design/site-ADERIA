@@ -452,6 +452,78 @@
   }
   .service-link:hover { gap: 12px; }
 
+  /* ===== ENGAGEMENTS ===== */
+  .engagements-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .engagement-card {
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 40px 36px;
+    border-left: 4px solid var(--terracotta);
+    border-top: 1px solid rgba(10, 34, 53, 0.05);
+    border-right: 1px solid rgba(10, 34, 53, 0.05);
+    border-bottom: 1px solid rgba(10, 34, 53, 0.05);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .engagement-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(193, 68, 14, 0.2);
+    border-left-color: var(--terracotta);
+    box-shadow: 0 20px 48px -16px rgba(10, 34, 53, 0.12);
+  }
+  .engagement-card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 140px; height: 140px;
+    background: radial-gradient(circle at top right, rgba(193, 68, 14, 0.04), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.35s;
+  }
+  .engagement-card:hover::before { opacity: 1; }
+  .engagement-num {
+    position: absolute;
+    top: 32px; right: 32px;
+    font-size: 56px;
+    font-weight: 600;
+    color: rgba(193, 68, 14, 0.06);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+  .engagement-icon {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    background: rgba(168, 216, 234, 0.35);
+    display: grid;
+    place-items: center;
+    margin-bottom: 24px;
+    color: var(--navy);
+    transition: all 0.35s;
+  }
+  .engagement-card:hover .engagement-icon {
+    background: var(--terracotta);
+    color: var(--cream);
+    transform: rotate(-4deg) scale(1.05);
+  }
+  .engagement-icon svg { width: 28px; height: 28px; }
+  .engagement-title {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+  .engagement-desc {
+    color: var(--slate);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
   /* ===== STATS ===== */
   .stats {
     background: var(--navy);
@@ -831,6 +903,7 @@
   }
   @media (max-width: 600px) {
     .services-grid { grid-template-columns: 1fr; }
+    .engagements-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -845,6 +918,7 @@
     <div class="nav-links">
       <a href="#services">Services</a>
       <a href="#chiffres">Résultats</a>
+      <a href="#engagements">Engagements</a>
       <a href="#apropos">À propos</a>
       <a href="#" class="nav-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/contact-aderia/30min'});return false;">Prendre rendez-vous</a>
     </div>
@@ -1027,6 +1101,91 @@
           <span>→</span>
         </a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENTS -->
+<section class="section" id="engagements">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow">Mes engagements</div>
+        <h2 class="section-title">L'IA au service des gens,<br>pas l'inverse.</h2>
+      </div>
+      <p class="section-sub">
+        Des principes non négociables qui guident chaque mission.
+        Parce que l'automatisation n'a de valeur que si elle sert les gens.
+      </p>
+    </div>
+
+    <div class="engagements-grid">
+
+      <div class="engagement-card reveal reveal-delay-1">
+        <div class="engagement-num">01</div>
+        <div class="engagement-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3 class="engagement-title">Libérer du temps, pas supprimer des postes</h3>
+        <p class="engagement-desc">
+          Mes systèmes déchargent vos équipes des tâches répétitives pour qu'elles se concentrent
+          sur ce qui a de la valeur. Je ne prends pas de mission dont l'objectif est de supprimer un poste.
+        </p>
+      </div>
+
+      <div class="engagement-card reveal reveal-delay-2">
+        <div class="engagement-num">02</div>
+        <div class="engagement-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+            <line x1="2" y1="2" x2="22" y2="22" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3 class="engagement-title">Zéro surveillance, zéro flicage</h3>
+        <p class="engagement-desc">
+          L'automatisation doit aider vos équipes, pas les épier. Je ne construis
+          jamais d'outils de surveillance des salariés.
+        </p>
+      </div>
+
+      <div class="engagement-card reveal reveal-delay-1">
+        <div class="engagement-num">03</div>
+        <div class="engagement-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <h3 class="engagement-title">Pas de manipulation de vos clients</h3>
+        <p class="engagement-desc">
+          Pas de faux avis, pas de bots déguisés en humains, pas de spam maquillé en prospection.
+          Ce que je construis vend honnêtement.
+        </p>
+      </div>
+
+      <div class="engagement-card reveal reveal-delay-2">
+        <div class="engagement-num">04</div>
+        <div class="engagement-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 8v4l2 2"/>
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M17 16l-3-2"/>
+            <circle cx="12" cy="12" r="2.5" fill="none" stroke-width="1.2"/>
+          </svg>
+        </div>
+        <h3 class="engagement-title">L'IA prépare, l'humain décide</h3>
+        <p class="engagement-desc">
+          Quand une décision touche une personne — candidature, client, dossier — mes systèmes
+          trient, préparent et suggèrent. La décision finale reste toujours humaine.
+        </p>
+      </div>
+
     </div>
   </div>
 </section>
