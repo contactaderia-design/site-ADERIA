@@ -360,6 +360,7 @@
     justify-content: center;
   }
   .service-card {
+    scroll-margin-top: 100px;
     width: calc(33.333% - 16px);
     flex-shrink: 0;
     background: #FFFFFF;
@@ -932,7 +933,7 @@
 
     <div class="services-grid">
       <!-- Audit IA -->
-      <div class="service-card reveal reveal-delay-1">
+      <div id="audit" class="service-card reveal reveal-delay-1">
         <div class="service-num">01</div>
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -958,7 +959,7 @@
       </div>
 
       <!-- Workflows IA -->
-      <div class="service-card reveal reveal-delay-2">
+      <div id="workflows" class="service-card reveal reveal-delay-2">
         <div class="service-num">02</div>
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -981,7 +982,7 @@
       </div>
 
       <!-- Agents IA -->
-      <div class="service-card reveal reveal-delay-3">
+      <div id="agents" class="service-card reveal reveal-delay-3">
         <div class="service-num">03</div>
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -1005,7 +1006,7 @@
       </div>
 
       <!-- Apps Web & Mobile -->
-      <div class="service-card reveal reveal-delay-3">
+      <div id="apps" class="service-card reveal reveal-delay-3">
         <div class="service-num">04</div>
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -1026,7 +1027,7 @@
         </div>
       </div>
 
-      <div class="service-card reveal reveal-delay-1">
+      <div id="geo" class="service-card reveal reveal-delay-1">
         <div class="service-num">05</div>
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -1239,7 +1240,7 @@
         <p>
           C'est l'esprit que je mets dans chaque mission : rigueur
           d'ingénieurs, audace de pionniers, et une obsession pour le
-          résultat concret. J'accompagne les PME et ETI de la région
+          résultat concret. J'accompagne les PME et TPE de la région
           dans leur passage à l'ère de l'IA opérationnelle.
         </p>
       </div>
@@ -1313,27 +1314,27 @@
           <img src="logo_aderia.png" alt="ADERIA">
         </a>
         <p>
-          Automatisation IA sur-mesure pour les PME et ETI.
+          Automatisation IA sur-mesure pour les PME et TPE.
           Depuis Toulouse, la ville où l'on sait faire décoller les choses.
         </p>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="#">Audit IA</a></li>
-          <li><a href="#">Workflows IA</a></li>
-          <li><a href="#">Agents IA</a></li>
-          <li><a href="#">Formation</a></li>
+          <li><a href="#audit">Audit IA</a></li>
+          <li><a href="#workflows">Workflows IA</a></li>
+          <li><a href="#agents">Agents IA</a></li>
+          <li><a href="#apps">Apps Web &amp; Mobile</a></li>
+          <li><a href="#geo">Optimisation GEO</a></li>
           <li><a href="#" onclick="Tally.openPopup(&#39;ODgv0Y&#39;,{layout:&#39;modal&#39;,width:640,hideTitle:true,overlay:true,emoji:{text:&#39;👋&#39;,animation:&#39;wave&#39;}});return false;">Demander mon audit gratuit</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Entreprise</h4>
         <ul>
-          <li><a href="#">À propos</a></li>
-          <li><a href="#">Études de cas</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Carrières</a></li>
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#engagements">Engagements</a></li>
+          <li><a href="#chiffres">Résultats</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1346,7 +1347,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div>© 2026 ADERIA · Tous droits réservés</div>
+      <div>© 2026 ADERIA · Domiciliation administrative : 6 rue d’Armaillé, 75017 Paris</div>
       <div class="footer-toulouse">
         <span class="dot-tls"></span>
         Conçu à Toulouse
