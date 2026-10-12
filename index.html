@@ -217,6 +217,26 @@
   .dot.d5 { top: 100%; opacity: 0.9; width: 14px; height: 14px; }  /* face à d2, sur la même orbite */
   .dot.d6 { opacity: 0.9; width: 14px; height: 14px; }
 
+  /* Orbites des sections sombres (chiffres, contact) : mêmes orbites, plus discrètes.
+     Les classes o1, o2, o4, o5 (hero) ont la même géométrie que les cercles des chiffres. */
+  .section-orbits {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .section-orbits .dot { width: 12px; height: 12px; opacity: 0.85; box-shadow: none; }
+  .section-orbits .dot.dl { background: var(--sky); }
+  .orbit.oa { width: 500px; height: 500px; top: -150px;    left: -100px;  --t: 75s; --a: 130deg; }
+  .orbit.ob { width: 700px; height: 700px; top: -250px;    left: -200px;  --t: 110s; --a: 60deg; }
+  .orbit.oc { width: 420px; height: 420px; bottom: -140px; right: -80px;  --t: 55s; --a: 300deg; }
+  .orbit.od { width: 620px; height: 620px; bottom: -240px; right: -180px; --t: 95s; --a: 200deg; }
+  .stats > .container { position: relative; }
+
+  /* Pause quand la section n'est pas visible (économie de batterie) */
+  .orbits-off .orbit { animation-play-state: paused; }
+
   @media (prefers-reduced-motion: reduce) {
     .orbit { animation: none; }
   }
@@ -579,12 +599,13 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.06;
+    opacity: 0.2;
   }
   .stats-circles .circle {
     border-color: var(--sky);
     opacity: 1;
   }
+  .stats-circles .c4, .stats-circles .c5 { opacity: 0.45; }  /* coins bas-gauche : passent près du texte */
   .stats-head {
     text-align: center;
     margin-bottom: 80px;
@@ -717,12 +738,12 @@
   }
   .contact-circles .circle {
     border-color: var(--sky);
-    opacity: 0.08;
+    opacity: 0.2;
   }
   .contact-circles .c-a { width: 500px; height: 500px; top: -150px; left: -100px; }
-  .contact-circles .c-b { width: 700px; height: 700px; top: -250px; left: -200px; opacity: 0.05; }
-  .contact-circles .c-c { width: 420px; height: 420px; bottom: -140px; right: -80px; border-color: var(--terracotta); opacity: 0.15; }
-  .contact-circles .c-d { width: 620px; height: 620px; bottom: -240px; right: -180px; border-color: var(--terracotta); opacity: 0.08; }
+  .contact-circles .c-b { width: 700px; height: 700px; top: -250px; left: -200px; opacity: 0.12; }
+  .contact-circles .c-c { width: 420px; height: 420px; bottom: -140px; right: -80px; border-color: var(--terracotta); opacity: 0.35; }
+  .contact-circles .c-d { width: 620px; height: 620px; bottom: -240px; right: -180px; border-color: var(--terracotta); opacity: 0.2; }
 
   .contact-inner { position: relative; max-width: 720px; margin: 0 auto; }
   .contact h2 {
@@ -872,6 +893,7 @@
     .services-grid { flex-direction: column; }
     .service-card { width: 100%; }
     .engagements-grid { grid-template-columns: 1fr; }
+    .stats-circles { opacity: 0.1; }  /* arcs plus discrets derrière le texte */
   }
 </style>
 </head>
@@ -1231,6 +1253,10 @@
     <div class="circle c4"></div>
     <div class="circle c5"></div>
   </div>
+  <div class="section-orbits">
+    <div class="orbit o1"><span class="dot dl"></span><span class="dot d5"></span></div>
+    <div class="orbit o2 rev"><span class="dot"></span></div>
+  </div>
   <div class="container">
     <div class="stats-head reveal">
       <div class="eyebrow" style="justify-content: center; display: inline-flex;">Résultats mesurés</div>
@@ -1299,6 +1325,12 @@
     <div class="circle c-a"></div>
     <div class="circle c-d"></div>
     <div class="circle c-c"></div>
+  </div>
+  <div class="section-orbits">
+    <div class="orbit oa"><span class="dot dl"></span></div>
+    <div class="orbit ob rev"><span class="dot dl"></span><span class="dot d5"></span></div>
+    <div class="orbit oc"><span class="dot"></span></div>
+    <div class="orbit od rev"><span class="dot dl"></span></div>
   </div>
   <div class="container contact-inner">
     <div class="eyebrow reveal" style="color: var(--sky);">Prenons contact</div>
@@ -1414,6 +1446,12 @@
     });
   }, { threshold: 0.4 });
   document.querySelectorAll('.stat-num').forEach((el) => statObserver.observe(el));
+
+  // Pause les orbites quand la section n'est pas à l'écran
+  const orbitObserver = new IntersectionObserver((entries) => {
+    entries.forEach((e) => e.target.classList.toggle('orbits-off', !e.isIntersecting));
+  }, { threshold: 0 });
+  document.querySelectorAll('.hero, .stats, .contact').forEach((el) => orbitObserver.observe(el));
 
   // Subtle parallax on hero circles
   const heroBg = document.querySelector('.hero-bg');
