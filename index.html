@@ -806,7 +806,14 @@
     color: var(--sky);
     padding: 64px 0 36px;
     border-top: 3px solid var(--terracotta);
+    position: relative;
+    overflow: hidden;
   }
+  footer > .container { position: relative; z-index: 1; }
+  .footer-circles { position: absolute; inset: 0; pointer-events: none; }
+  .footer-circles .circle { border-color: var(--sky); opacity: 0.18; }
+  .footer-circles .fc1 { width: 420px; height: 420px; bottom: -140px; right: -80px; border-color: var(--terracotta); opacity: 0.4; }
+  .footer-circles .fc2 { width: 620px; height: 620px; bottom: -240px; right: -180px; border-color: var(--terracotta); opacity: 0.22; }
   .footer-top {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
@@ -1371,6 +1378,14 @@
 
 <!-- FOOTER -->
 <footer>
+  <div class="footer-circles">
+    <div class="circle fc2"></div>
+    <div class="circle fc1"></div>
+  </div>
+  <div class="section-orbits">
+    <div class="orbit oc"><span class="dot"></span></div>
+    <div class="orbit od rev"><span class="dot"></span></div>
+  </div>
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
@@ -1451,7 +1466,7 @@
   const orbitObserver = new IntersectionObserver((entries) => {
     entries.forEach((e) => e.target.classList.toggle('orbits-off', !e.isIntersecting));
   }, { threshold: 0 });
-  document.querySelectorAll('.hero, .stats, .contact').forEach((el) => orbitObserver.observe(el));
+  document.querySelectorAll('.hero, .stats, .contact, footer').forEach((el) => orbitObserver.observe(el));
 
   // Subtle parallax on hero circles
   const heroBg = document.querySelector('.hero-bg');
