@@ -9,11 +9,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap">
-<!-- Calendly widget -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" async=""></script>
-<!-- Tally popup widget -->
-<script src="https://tally.so/widgets/embed.js"></script><style>@keyframes _spin_evhv6_1{0%{transform:rotate(0)}to{transform:rotate(360deg)}}@keyframes _wave_evhv6_1{0%{transform:rotate(0)}50%{transform:rotate(20deg)}to{transform:rotate(0)}}@keyframes _heartBeat_evhv6_1{0%{transform:scale(1)}50%{transform:scale(1.08)}to{transform:scale(1)}}@keyframes _flash_evhv6_1{0%,50%,to{opacity:1}25%,75%{opacity:.2}}@keyframes _bounce_evhv6_1{0%,20%,53%,to{transform:translate(0,0)}40%,43%{transform:translateY(-30px)scaleY(1.1)}70%{transform:translateY(-15px)scaleY(1.05)}80%{transform:translate(0,0)scaleY(.95)}90%{transform:translateY(-4px)scaleY(1.02)}}@keyframes _rubberBand_evhv6_1{0%{transform:scale(1)}30%{transform:scale(1.25,.75)}40%{transform:scale(.75,1.25)}50%{transform:scale(1.15,.85)}65%{transform:scale(.95,1.05)}75%{transform:scale(1.05,.95)}to{transform:scale(1)}}@keyframes _headShake_evhv6_1{0%{transform:translate(0)}6.5%{transform:translate(-6px)rotateY(-9deg)}18.5%{transform:translate(5px)rotateY(7deg)}31.5%{transform:translate(-3px)rotateY(-5deg)}43.5%{transform:translate(2px)rotateY(3deg)}50%{transform:translate(0)}}@keyframes _tada_evhv6_1{0%{transform:scale(1)}10%,20%{transform:scale3d(.9,.9,.9)rotate(-3deg)}30%,50%,70%,90%{transform:scale3d(1.1,1.1,1.1)rotate(3deg)}40%,60%,80%{transform:scale3d(1.1,1.1,1.1)rotate(-3deg)}to{transform:scale(1)}}._overlay_evhv6_157{z-index:1000000006;background-color:#0f0f0f99;justify-content:center;align-items:center;display:flex;position:fixed;inset:0}._layoutDefault_evhv6_170{z-index:2147483000;opacity:0;background-color:#0000;border-radius:5px;width:auto;max-width:95vw;height:auto;display:flex;position:fixed;bottom:20px;right:20px;box-shadow:0 0 0 1px #0f0f0f0d,0 3px 6px #0f0f0f1a,0 9px 24px #0f0f0f33}._layoutModal_evhv6_186{z-index:2147483000;opacity:0;background-color:#0000;border-radius:5px;width:700px;max-width:95vw;height:auto;display:flex;position:relative;box-shadow:0 0 0 1px #0f0f0f0d,0 3px 6px #0f0f0f1a,0 9px 24px #0f0f0f33}._popupContainer_evhv6_200{border-radius:5px;width:100%;display:flex;overflow-y:auto}._popupContainer_evhv6_200 iframe{border-radius:5px;max-height:95vh}._loadingIndicator_evhv6_212{z-index:2147483000;color:#444;background-color:#f5f5f5;border-radius:50%;justify-content:center;align-items:center;width:50px;height:50px;display:inline-flex;position:absolute}._loadingIndicatorNoOverlay_evhv6_225{position:fixed;bottom:10px;right:10px}._loadingIndicator_evhv6_212 svg{width:20px;height:20px;animation:1.618s linear infinite _spin_evhv6_1}._emoji_evhv6_237{font-size:42px;line-height:1;display:inline-block;position:absolute;top:-21px;left:-21px}._animate__wave_evhv6_246{animation:1s ease-in-out 20 _wave_evhv6_1}._animate__heart-beat_evhv6_250{animation:1.3s ease-in-out 20 _heartBeat_evhv6_1}._animate__flash_evhv6_254{animation:2.5s 20 _flash_evhv6_1}._animate__bounce_evhv6_258{transform-origin:bottom;animation:1.5s 20 _bounce_evhv6_1}._animate__rubber-band_evhv6_263{animation:1.5s 20 _rubberBand_evhv6_1}._animate__head-shake_evhv6_267{animation:1.5s ease-in-out 20 _headShake_evhv6_1}._animate__tada_evhv6_271{animation:1.5s 20 _tada_evhv6_1}._animate__spin_evhv6_275{animation:1.618s linear 20 _spin_evhv6_1}@media (height<=1000px){._popupContainer_evhv6_200 iframe{max-height:85vh}}@media (width<=576px){._popupContainer_evhv6_200 iframe{max-height:70vh}._layoutDefault_evhv6_170,._layoutModal_evhv6_186{max-width:calc(100% - 40px)}}
+<!-- Calendly et Tally : chargés au clic uniquement (voir script en bas de page) -->
+<!-- Styles du popup Tally (le script, lui, est chargé au clic) -->
+<style>@keyframes _spin_evhv6_1{0%{transform:rotate(0)}to{transform:rotate(360deg)}}@keyframes _wave_evhv6_1{0%{transform:rotate(0)}50%{transform:rotate(20deg)}to{transform:rotate(0)}}@keyframes _heartBeat_evhv6_1{0%{transform:scale(1)}50%{transform:scale(1.08)}to{transform:scale(1)}}@keyframes _flash_evhv6_1{0%,50%,to{opacity:1}25%,75%{opacity:.2}}@keyframes _bounce_evhv6_1{0%,20%,53%,to{transform:translate(0,0)}40%,43%{transform:translateY(-30px)scaleY(1.1)}70%{transform:translateY(-15px)scaleY(1.05)}80%{transform:translate(0,0)scaleY(.95)}90%{transform:translateY(-4px)scaleY(1.02)}}@keyframes _rubberBand_evhv6_1{0%{transform:scale(1)}30%{transform:scale(1.25,.75)}40%{transform:scale(.75,1.25)}50%{transform:scale(1.15,.85)}65%{transform:scale(.95,1.05)}75%{transform:scale(1.05,.95)}to{transform:scale(1)}}@keyframes _headShake_evhv6_1{0%{transform:translate(0)}6.5%{transform:translate(-6px)rotateY(-9deg)}18.5%{transform:translate(5px)rotateY(7deg)}31.5%{transform:translate(-3px)rotateY(-5deg)}43.5%{transform:translate(2px)rotateY(3deg)}50%{transform:translate(0)}}@keyframes _tada_evhv6_1{0%{transform:scale(1)}10%,20%{transform:scale3d(.9,.9,.9)rotate(-3deg)}30%,50%,70%,90%{transform:scale3d(1.1,1.1,1.1)rotate(3deg)}40%,60%,80%{transform:scale3d(1.1,1.1,1.1)rotate(-3deg)}to{transform:scale(1)}}._overlay_evhv6_157{z-index:1000000006;background-color:#0f0f0f99;justify-content:center;align-items:center;display:flex;position:fixed;inset:0}._layoutDefault_evhv6_170{z-index:2147483000;opacity:0;background-color:#0000;border-radius:5px;width:auto;max-width:95vw;height:auto;display:flex;position:fixed;bottom:20px;right:20px;box-shadow:0 0 0 1px #0f0f0f0d,0 3px 6px #0f0f0f1a,0 9px 24px #0f0f0f33}._layoutModal_evhv6_186{z-index:2147483000;opacity:0;background-color:#0000;border-radius:5px;width:700px;max-width:95vw;height:auto;display:flex;position:relative;box-shadow:0 0 0 1px #0f0f0f0d,0 3px 6px #0f0f0f1a,0 9px 24px #0f0f0f33}._popupContainer_evhv6_200{border-radius:5px;width:100%;display:flex;overflow-y:auto}._popupContainer_evhv6_200 iframe{border-radius:5px;max-height:95vh}._loadingIndicator_evhv6_212{z-index:2147483000;color:#444;background-color:#f5f5f5;border-radius:50%;justify-content:center;align-items:center;width:50px;height:50px;display:inline-flex;position:absolute}._loadingIndicatorNoOverlay_evhv6_225{position:fixed;bottom:10px;right:10px}._loadingIndicator_evhv6_212 svg{width:20px;height:20px;animation:1.618s linear infinite _spin_evhv6_1}._emoji_evhv6_237{font-size:42px;line-height:1;display:inline-block;position:absolute;top:-21px;left:-21px}._animate__wave_evhv6_246{animation:1s ease-in-out 20 _wave_evhv6_1}._animate__heart-beat_evhv6_250{animation:1.3s ease-in-out 20 _heartBeat_evhv6_1}._animate__flash_evhv6_254{animation:2.5s 20 _flash_evhv6_1}._animate__bounce_evhv6_258{transform-origin:bottom;animation:1.5s 20 _bounce_evhv6_1}._animate__rubber-band_evhv6_263{animation:1.5s 20 _rubberBand_evhv6_1}._animate__head-shake_evhv6_267{animation:1.5s ease-in-out 20 _headShake_evhv6_1}._animate__tada_evhv6_271{animation:1.5s 20 _tada_evhv6_1}._animate__spin_evhv6_275{animation:1.618s linear 20 _spin_evhv6_1}@media (height<=1000px){._popupContainer_evhv6_200 iframe{max-height:85vh}}@media (width<=576px){._popupContainer_evhv6_200 iframe{max-height:70vh}._layoutDefault_evhv6_170,._layoutModal_evhv6_186{max-width:calc(100% - 40px)}}
 /*$vite$:1*/</style>
 <style>
   :root {
@@ -921,7 +919,7 @@
       <a href="#engagements">Engagements</a>
       <a href="#chiffres">Résultats</a>
       <a href="#apropos">À propos</a>
-      <a href="#" class="nav-cta" onclick="Calendly.initPopupWidget({url:&#39;https://calendly.com/contact-aderia/30min&#39;});return false;">Prendre rendez-vous</a>
+      <a href="https://calendly.com/contact-aderia/30min" class="nav-cta" onclick="openCalendly();return false;">Prendre rendez-vous</a>
     </div>
   </div>
 </nav>
@@ -955,13 +953,13 @@
       concentrent sur ce qui compte vraiment.
     </p>
     <div class="hero-cta reveal reveal-delay-3 visible">
-      <a href="#" class="btn btn-primary" onclick="Calendly.initPopupWidget({url:&#39;https://calendly.com/contact-aderia/30min&#39;});return false;">
+      <a href="https://calendly.com/contact-aderia/30min" class="btn btn-primary" onclick="openCalendly();return false;">
         Prendre rendez-vous
         <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M5 12h14M13 5l7 7-7 7"></path>
         </svg>
       </a>
-      <a href="#" class="btn btn-outline" onclick="Tally.openPopup(&#39;pbQyAq&#39;,{layout:&#39;modal&#39;,width:640,hideTitle:true,overlay:true,emoji:{text:&#39;⚡&#39;,animation:&#39;flash&#39;}});return false;">
+      <a href="https://tally.so/r/pbQyAq" class="btn btn-outline" onclick="openTally('pbQyAq','⚡','flash');return false;">
         Diagnostic express (2 min)
       </a>
     </div>
@@ -1017,7 +1015,7 @@
           <span class="service-tag">ROI</span>
           <span class="service-tag">Roadmap</span>
         </div>
-        <a href="#" class="service-link" onclick="Tally.openPopup(&#39;ODgv0Y&#39;,{layout:&#39;modal&#39;,width:640,hideTitle:true,overlay:true,emoji:{text:&#39;👋&#39;,animation:&#39;wave&#39;}});return false;">
+        <a href="https://tally.so/r/ODgv0Y" class="service-link" onclick="openTally('ODgv0Y','👋','wave');return false;">
           Demander mon audit gratuit
           <span>→</span>
         </a>
@@ -1142,7 +1140,7 @@
         <p class="engagement-desc">
           5 questions rapides pour repérer vos premières pistes d'automatisation.
         </p>
-        <a href="#" class="btn btn-primary" style="margin-top: 24px;" onclick="Tally.openPopup(&#39;pbQyAq&#39;,{layout:&#39;modal&#39;,width:640,hideTitle:true,overlay:true,emoji:{text:&#39;⚡&#39;,animation:&#39;flash&#39;}});return false;">
+        <a href="https://tally.so/r/pbQyAq" class="btn btn-primary" style="margin-top: 24px;" onclick="openTally('pbQyAq','⚡','flash');return false;">
           Faire le diagnostic express
           <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14M13 5l7 7-7 7"></path>
@@ -1163,7 +1161,7 @@
           Un questionnaire approfondi sur vos process pour recevoir une analyse
           et un plan d'action personnalisé.
         </p>
-        <a href="#" class="btn btn-outline" style="margin-top: 24px;" onclick="Tally.openPopup(&#39;ODgv0Y&#39;,{layout:&#39;modal&#39;,width:640,hideTitle:true,overlay:true,emoji:{text:&#39;👋&#39;,animation:&#39;wave&#39;}});return false;">
+        <a href="https://tally.so/r/ODgv0Y" class="btn btn-outline" style="margin-top: 24px;" onclick="openTally('ODgv0Y','👋','wave');return false;">
           Faire le diagnostic complet
         </a>
       </div>
@@ -1353,7 +1351,7 @@
       sans jargon — juste une conversation utile.
     </p>
     <div class="contact-cta reveal reveal-delay-3">
-      <a href="#" class="btn btn-primary" onclick="Calendly.initPopupWidget({url:&#39;https://calendly.com/contact-aderia/30min&#39;});return false;">
+      <a href="https://calendly.com/contact-aderia/30min" class="btn btn-primary" onclick="openCalendly();return false;">
         Réserver un créneau
         <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M5 12h14M13 5l7 7-7 7"></path>
@@ -1406,7 +1404,7 @@
         <ul>
           <li><a href="mailto:contact.aderia@gmail.com">contact.aderia@gmail.com</a></li>
           <li><a href="https://www.linkedin.com/company/146513016/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="#" onclick="Calendly.initPopupWidget({url:&#39;https://calendly.com/contact-aderia/30min&#39;});return false;">Prendre rendez-vous</a></li>
+          <li><a href="https://calendly.com/contact-aderia/30min" onclick="openCalendly();return false;">Prendre rendez-vous</a></li>
         </ul>
       </div>
     </div>
@@ -1465,6 +1463,48 @@
     });
   }, { threshold: 0.4 });
   document.querySelectorAll('.stat-num').forEach((el) => statObserver.observe(el));
+
+  // Calendly et Tally : chargés seulement au clic.
+  // Avant un clic, aucun serveur Calendly ou Tally n'est contacté.
+  const CALENDLY_URL = 'https://calendly.com/contact-aderia/30min';
+  const thirdParty = {};
+  const loadScript = (src) => new Promise((resolve, reject) => {
+    const el = document.createElement('script');
+    el.src = src; el.async = true; el.onload = resolve; el.onerror = reject;
+    document.head.appendChild(el);
+  });
+  const loadStyle = (href) => new Promise((resolve) => {
+    const el = document.createElement('link');
+    el.rel = 'stylesheet'; el.href = href; el.onload = resolve; el.onerror = resolve;
+    document.head.appendChild(el);
+  });
+  const loadOnce = (key, loader) => {
+    if (!thirdParty[key]) thirdParty[key] = loader().catch((err) => { delete thirdParty[key]; throw err; });
+    return thirdParty[key];
+  };
+  const withWaitCursor = async (promise) => {
+    document.body.style.cursor = 'progress';
+    try { return await promise; } finally { document.body.style.cursor = ''; }
+  };
+  window.openCalendly = async function () {
+    try {
+      await withWaitCursor(loadOnce('calendly', () => Promise.all([
+        loadStyle('https://assets.calendly.com/assets/external/widget.css'),
+        loadScript('https://assets.calendly.com/assets/external/widget.js')
+      ])));
+      Calendly.initPopupWidget({ url: CALENDLY_URL });
+    } catch (err) {
+      window.open(CALENDLY_URL, '_blank', 'noopener');  // secours si le script est bloqué
+    }
+  };
+  window.openTally = async function (formId, emoji, animation) {
+    try {
+      await withWaitCursor(loadOnce('tally', () => loadScript('https://tally.so/widgets/embed.js')));
+      Tally.openPopup(formId, { layout: 'modal', width: 640, hideTitle: true, overlay: true, emoji: { text: emoji, animation: animation } });
+    } catch (err) {
+      window.open('https://tally.so/r/' + formId, '_blank', 'noopener');  // secours si le script est bloqué
+    }
+  };
 
   // Pause les orbites quand la section n'est pas à l'écran
   const orbitObserver = new IntersectionObserver((entries) => {
