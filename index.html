@@ -172,14 +172,14 @@
   .circle {
     position: absolute;
     border-radius: 50%;
-    border: 2px solid var(--navy);
+    border: 1.5px solid var(--navy);
     opacity: 0.08;
   }
-  .circle.c1 { width: 700px; height: 700px; top: -200px; right: 50%; transform: translateX(50%); border-color: var(--sky-deep); opacity: 0.6; }
-  .circle.c2 { width: 1100px; height: 1100px; top: -380px; right: 50%; transform: translateX(50%); border-color: var(--sky-deep); opacity: 0.42; }
-  .circle.c3 { width: 1500px; height: 1500px; top: -560px; right: 50%; transform: translateX(50%); border-color: var(--sky-deep); opacity: 0.3; }
-  .circle.c4 { width: 380px; height: 380px; bottom: -120px; left: -100px; border-color: var(--terracotta); opacity: 0.4; }
-  .circle.c5 { width: 560px; height: 560px; bottom: -220px; left: -180px; border-color: var(--terracotta); opacity: 0.28; }
+  .circle.c1 { width: 700px; height: 700px; top: -200px; right: 50%; transform: translateX(50%); border-color: var(--sky-deep); opacity: 0.45; }
+  .circle.c2 { width: 1100px; height: 1100px; top: -380px; right: 50%; transform: translateX(50%); border-color: var(--sky-deep); opacity: 0.32; }
+  .circle.c3 { width: 1500px; height: 1500px; top: -560px; right: 50%; transform: translateX(50%); border-color: var(--sky-deep); opacity: 0.22; }
+  .circle.c4 { width: 380px; height: 380px; bottom: -120px; left: -100px; border-color: var(--terracotta); opacity: 0.32; }
+  .circle.c5 { width: 560px; height: 560px; bottom: -220px; left: -180px; border-color: var(--terracotta); opacity: 0.22; }
 
   /* Orbites : chaque .orbit a la taille et la position d'un cercle du hero
      et tourne autour de son centre. Les orbes (.dot) sont posées sur le cercle,
@@ -206,16 +206,16 @@
     position: absolute;
     top: 0; left: 50%;
     transform: translate(-50%, -50%);
-    width: 16px; height: 16px;
+    width: 13px; height: 13px;
     border-radius: 50%;
     background: var(--terracotta);
   }
-  .dot.d1 { opacity: 1; }
-  .dot.d2 { background: var(--sky-deep); opacity: 1; width: 22px; height: 22px; box-shadow: 0 0 0 12px rgba(109, 185, 219, 0.28); }
-  .dot.d3 { background: var(--sky-deep); opacity: 1; width: 16px; height: 16px; }
-  .dot.d4 { background: var(--sky-deep); opacity: 1; width: 13px; height: 13px; }
-  .dot.d5 { top: 100%; opacity: 0.9; width: 14px; height: 14px; }  /* face à d2, sur la même orbite */
-  .dot.d6 { opacity: 0.9; width: 14px; height: 14px; }
+  .dot.d1 { opacity: 0.9; }
+  .dot.d2 { background: var(--sky-deep); opacity: 1; width: 18px; height: 18px; box-shadow: 0 0 0 10px rgba(109, 185, 219, 0.25); }
+  .dot.d3 { background: var(--sky-deep); opacity: 1; width: 13px; height: 13px; }
+  .dot.d4 { background: var(--sky-deep); opacity: 1; width: 11px; height: 11px; }
+  .dot.d5 { top: 100%; opacity: 0.8; width: 11px; height: 11px; }  /* face à d2, sur la même orbite */
+  .dot.d6 { opacity: 0.8; width: 11px; height: 11px; }
 
   /* Orbites des sections sombres (chiffres, contact) : mêmes orbites, plus discrètes.
      Les classes o1, o2, o4, o5 (hero) ont la même géométrie que les cercles des chiffres. */
