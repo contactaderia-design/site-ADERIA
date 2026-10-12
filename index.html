@@ -180,16 +180,45 @@
   .circle.c4 { width: 380px; height: 380px; bottom: -120px; left: -100px; border-color: var(--terracotta); opacity: 0.1; }
   .circle.c5 { width: 560px; height: 560px; bottom: -220px; left: -180px; border-color: var(--terracotta); opacity: 0.06; }
 
+  /* Orbites : chaque .orbit a la taille et la position d'un cercle du hero
+     et tourne autour de son centre. Les orbes (.dot) sont posées sur le cercle,
+     donc elles suivent la courbe. --t = durée d'un tour, --a = angle de départ. */
+  .orbit {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: rotate(var(--a, 0deg));
+    animation: orbit var(--t, 60s) linear infinite;
+    will-change: transform;
+  }
+  .orbit.rev { animation-direction: reverse; }
+  .orbit.o1 { width: 700px;  height: 700px;  top: -200px; left: calc(50% - 350px); --t: 70s;  --a: 250deg; }
+  .orbit.o2 { width: 1100px; height: 1100px; top: -380px; left: calc(50% - 550px); --t: 110s; --a: 110deg; }
+  .orbit.o3 { width: 1500px; height: 1500px; top: -560px; left: calc(50% - 750px); --t: 160s; --a: 235deg; }
+  .orbit.o4 { width: 380px;  height: 380px;  bottom: -120px; left: -100px;         --t: 45s;  --a: 40deg; }
+  .orbit.o5 { width: 560px;  height: 560px;  bottom: -220px; left: -180px;         --t: 80s;  --a: 20deg; }
+  @keyframes orbit {
+    to { transform: rotate(calc(var(--a, 0deg) + 360deg)); }
+  }
+
   .dot {
     position: absolute;
+    top: 0; left: 50%;
+    transform: translate(-50%, -50%);
     width: 8px; height: 8px;
     border-radius: 50%;
     background: var(--terracotta);
   }
-  .dot.d1 { top: 22%; right: 16%; opacity: 0.6; }
-  .dot.d2 { top: 30%; left: 14%; background: var(--sky); opacity: 0.9; width: 10px; height: 10px; box-shadow: 0 0 0 6px rgba(168, 216, 234, 0.25); }
-  .dot.d3 { top: 60%; right: 12%; background: var(--sky); opacity: 1; width: 7px; height: 7px; }
-  .dot.d4 { bottom: 18%; left: 18%; background: var(--sky); opacity: 0.7; width: 5px; height: 5px; }
+  .dot.d1 { opacity: 0.6; }
+  .dot.d2 { background: var(--sky); opacity: 0.9; width: 10px; height: 10px; box-shadow: 0 0 0 6px rgba(168, 216, 234, 0.25); }
+  .dot.d3 { background: var(--sky); opacity: 1; width: 7px; height: 7px; }
+  .dot.d4 { background: var(--sky); opacity: 0.7; width: 5px; height: 5px; }
+  .dot.d5 { top: 100%; opacity: 0.5; width: 6px; height: 6px; }  /* face à d2, sur la même orbite */
+  .dot.d6 { opacity: 0.45; width: 6px; height: 6px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .orbit { animation: none; }
+  }
 
   .hero-inner {
     position: relative;
@@ -871,10 +900,11 @@
     <div class="circle c1"></div>
     <div class="circle c4"></div>
     <div class="circle c5"></div>
-    <div class="dot d1"></div>
-    <div class="dot d2"></div>
-    <div class="dot d3"></div>
-    <div class="dot d4"></div>
+    <div class="orbit o1"><span class="dot d2"></span><span class="dot d5"></span></div>
+    <div class="orbit o2 rev"><span class="dot d1"></span><span class="dot d5"></span></div>
+    <div class="orbit o3"><span class="dot d3"></span><span class="dot d5"></span></div>
+    <div class="orbit o4"><span class="dot d4"></span></div>
+    <div class="orbit o5 rev"><span class="dot d6"></span></div>
   </div>
   <div class="container hero-inner">
     <div class="hero-tag reveal visible" style="display: inline-flex;">
