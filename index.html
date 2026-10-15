@@ -33,6 +33,9 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 90px; }
+
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 
   body {
     font-family: 'DM Sans', sans-serif;
@@ -105,6 +108,12 @@
   }
   .nav-links a:hover { color: var(--terracotta); }
   .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 1.2;
     padding: 14px 24px;
     background: var(--ink);
     color: var(--cream) !important;
@@ -112,6 +121,57 @@
     font-size: 16px;
     transition: all 0.2s;
   }
+  .nav-cta .cta-short { display: none; }
+
+  /* Menu mobile (bouton burger + panneau) */
+  .nav-toggle {
+    display: none;
+    width: 44px; height: 44px;
+    flex-shrink: 0;
+    border: 1.5px solid var(--line);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.55);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 18px; height: 2px;
+    border-radius: 2px;
+    background: var(--ink);
+    transition: transform 0.25s, opacity 0.2s;
+  }
+  .nav.open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+  .nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-mobile {
+    display: none;
+  }
+  .nav.open {
+    background: rgba(243, 235, 221, 0.97);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav.open .nav-mobile { display: block; }
+  .nav-mobile ul {
+    list-style: none;
+    padding: 8px 0 20px;
+  }
+  .nav-mobile a {
+    display: block;
+    padding: 14px 0;
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-mobile li:last-child a { border-bottom: none; }
+  .nav-mobile a:hover { color: var(--terracotta); }
   .nav-cta:hover {
     background: var(--terracotta) !important;
     transform: translateY(-1px);
@@ -121,6 +181,9 @@
   .btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.3;
     gap: 10px;
     padding: 16px 28px;
     border-radius: 100px;
@@ -154,6 +217,7 @@
     transform: translateY(-2px);
   }
   .btn .arrow {
+    flex-shrink: 0;
     transition: transform 0.25s;
   }
   .btn:hover .arrow { transform: translateX(3px); }
@@ -282,7 +346,7 @@
   }
 
   .hero h1 {
-    font-size: clamp(56px, 8vw, 116px);
+    font-size: clamp(42px, 8vw, 116px);
     font-weight: 600;
     line-height: 1.0;
     letter-spacing: -0.04em;
@@ -881,28 +945,99 @@
   .reveal-delay-3 { transition-delay: 0.3s; }
 
   /* ===== RESPONSIVE ===== */
+  /* Tablette et mobile */
   @media (max-width: 900px) {
     .container { padding: 0 24px; }
+    .nav-links { gap: 0; }
     .nav-links a:not(.nav-cta) { display: none; }
-    .hero { padding: 140px 0 80px; }
+    .nav-inner { gap: 12px; }
+    .nav-inner .nav-links { margin-left: auto; }
+    .nav-toggle { display: inline-flex; }
+    .nav-mobile .container { padding-top: 4px; }
+    .logo img { height: 72px; }
+    .nav.scrolled .logo img { height: 60px; }
+    .hero { padding: 150px 0 72px; }
     .section { padding: 80px 0; }
     .services-grid { justify-content: center; }
     .service-card { width: calc(50% - 12px); }
+    .stats { padding: 88px 0; }
+    .stats-head { margin-bottom: 40px; }
     .stats-grid { grid-template-columns: 1fr; }
     .stat + .stat::before {
       left: 20%; right: 20%; top: 0; bottom: auto;
       width: auto; height: 1px;
     }
     .about-grid { grid-template-columns: 1fr; gap: 48px; }
-    .hero-meta { flex-direction: column; gap: 20px; }
-    .section-head { flex-direction: column; align-items: flex-start; }
+    .hero-meta { margin-top: 64px; padding-top: 32px; gap: 24px; }
+    .section-head { flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 48px; }
+    .contact { padding: 100px 0; }
     .footer-top { grid-template-columns: 1fr; gap: 36px; margin-bottom: 40px; align-items: start; }
   }
+
+  /* Téléphone */
   @media (max-width: 600px) {
-    .services-grid { flex-direction: column; }
-    .service-card { width: 100%; }
-    .engagements-grid { grid-template-columns: 1fr; }
+    body { font-size: 16px; }
+    .container { padding: 0 20px; }
+    .nav { padding: 12px 0; }
+    .nav.scrolled { padding: 8px 0; }
+    .logo img { height: 60px; }
+    .nav.scrolled .logo img { height: 50px; }
+    .nav-cta { padding: 11px 18px; font-size: 15px; }
+    .nav-cta .cta-long { display: none; }
+    .nav-cta .cta-short { display: inline; }
+    .nav-cta:hover { transform: none; }
+
+    .hero { padding: 116px 0 56px; }
+    .hero-tag { font-size: 12px; padding: 7px 14px; margin-bottom: 24px; }
+    .hero h1 { margin-bottom: 24px; letter-spacing: -0.035em; }
+    .hero-sub { font-size: 18px; margin-bottom: 36px; }
+    .hero-cta { flex-direction: column; align-items: stretch; max-width: 360px; margin: 0 auto; }
+    .hero-cta .btn { width: 100%; }
+    .hero-meta { flex-direction: column; gap: 18px; margin-top: 48px; }
+
+    .section { padding: 64px 0; }
+    .section-title { font-size: clamp(30px, 8.5vw, 40px); }
+    .section-sub { font-size: 16px; }
+    .eyebrow { font-size: 12px; margin-bottom: 14px; }
+
+    .services-grid { flex-direction: column; gap: 16px; }
+    .service-card { width: 100%; min-height: 0; padding: 28px 24px; border-radius: 20px; }
+    .service-num { top: 28px; right: 24px; }
+    .service-icon { width: 56px; height: 56px; margin-bottom: 20px; }
+    .service-title { font-size: 23px; }
+
+    .engagements-grid { grid-template-columns: 1fr; gap: 16px; }
+    .engagement-card { padding: 28px 24px; border-radius: 20px; }
+    .engagement-num { top: 22px; right: 22px; font-size: 44px; }
+    .engagement-title { font-size: 20px; padding-right: 40px; }
+    .engagement-card .btn { width: 100%; }
+
+    .stats { padding: 72px 0; }
     .stats-circles { opacity: 0.1; }  /* arcs plus discrets derrière le texte */
+    .stat { padding: 32px 8px; }
+
+    .about-text h2 { margin-bottom: 20px; }
+    .about-text p { font-size: 16px; }
+    .founder-card { padding: 32px 24px; border-radius: 22px; }
+    .founder-photo { width: 104px; height: 104px; }
+
+    .contact { padding: 80px 0; }
+    .contact p { font-size: 17px; margin-bottom: 36px; }
+    .contact-cta { flex-direction: column; align-items: stretch; max-width: 360px; margin: 0 auto 44px; }
+    .contact-cta .btn { width: 100%; }
+    .contact-info { flex-direction: column; align-items: center; gap: 14px; }
+
+    footer { padding: 48px 0 28px; }
+    .footer-brand .logo img { height: 88px; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 10px; font-size: 13px; }
+  }
+
+  /* Très petits écrans (iPhone SE, anciens Android) */
+  @media (max-width: 360px) {
+    .container { padding: 0 16px; }
+    .logo img { height: 48px; }
+    .nav-cta { padding: 10px 14px; font-size: 14px; }
+    .nav-toggle { width: 40px; height: 40px; }
   }
 </style>
 </head>
@@ -919,7 +1054,22 @@
       <a href="#engagements">Engagements</a>
       <a href="#chiffres">Résultats</a>
       <a href="#apropos">À propos</a>
-      <a href="https://calendly.com/contact-aderia/30min" class="nav-cta" onclick="openCalendly();return false;">Prendre rendez-vous</a>
+      <a href="https://calendly.com/contact-aderia/30min" class="nav-cta" onclick="openCalendly();return false;"><span class="cta-long">Prendre rendez-vous</span><span class="cta-short">Prendre RDV</span></a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-mobile">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="nav-mobile">
+    <div class="container">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#diagnostic">Diagnostic</a></li>
+        <li><a href="#engagements">Engagements</a></li>
+        <li><a href="#chiffres">Résultats</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
   </div>
 </nav>
@@ -1136,7 +1286,7 @@
             <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"></path>
           </svg>
         </div>
-        <h3 class="engagement-title">Diagnostic express — 2 min</h3>
+        <h3 class="engagement-title">Diagnostic express —&nbsp;2&nbsp;min</h3>
         <p class="engagement-desc">
           5 questions rapides pour repérer vos premières pistes d'automatisation.
         </p>
@@ -1156,7 +1306,7 @@
             <path d="M9 12l2 2 4-4"></path>
           </svg>
         </div>
-        <h3 class="engagement-title">Diagnostic complet — 10 min</h3>
+        <h3 class="engagement-title">Diagnostic complet —&nbsp;10&nbsp;min</h3>
         <p class="engagement-desc">
           Un questionnaire approfondi sur vos process pour recevoir une analyse
           et un plan d'action personnalisé.
@@ -1431,6 +1581,18 @@
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  // Menu mobile
+  const navToggle = nav.querySelector('.nav-toggle');
+  const setMenu = (open) => {
+    nav.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navToggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+  };
+  navToggle.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
+  nav.querySelectorAll('.nav-mobile a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+  window.addEventListener('resize', () => { if (window.innerWidth > 900) setMenu(false); }, { passive: true });
 
   // Reveal on scroll
   const observer = new IntersectionObserver((entries) => {
